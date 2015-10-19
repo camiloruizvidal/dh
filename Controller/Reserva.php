@@ -147,6 +147,8 @@ class Reserva
         }
         $Reservas = new ModelServicios();
         $Datos    = $Reservas->VerReservasPagasProveedores($FechaInicio, $FechaFin, $Proveedor);
+       /* var_dump($Datos);
+        exit();*/
         $Res      = array ();
         if (!is_null($Datos))
         {
@@ -174,10 +176,10 @@ class Reserva
         return $Datos;
     }
 
-    private function VerDetalleReservaPaquete($id_reserva)
+    private function VerDetalleReservaPaquete($id_reserva,$Proveedor)
     {
         $Reservas = new ModelServicios();
-        $Datos    = $Reservas->VerDetalleReservaPaquete($id_reserva);
+        $Datos    = $Reservas->VerDetalleReservaPaquete($id_reserva,$Proveedor);
         return $Datos;
     }
 
@@ -188,7 +190,7 @@ class Reserva
         return $Datos;
     }
 
-    public function VerdetalleReserva($id_reserva)
+    public function VerdetalleReserva($id_reserva,$Proveedor)
     {
         $tipo  = $this->tipo($id_reserva);
         $Datos = '';
@@ -198,7 +200,7 @@ class Reserva
         }
         else
         {
-            $Datos = $this->VerDetalleReservaPaquete($id_reserva);
+            $Datos = $this->VerDetalleReservaPaquete($id_reserva,$Proveedor);
         }
         return $Datos;
     }

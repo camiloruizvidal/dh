@@ -2,12 +2,12 @@ function imprimir(asd)
 {
     window.print();
 }
-function Detalle(cod)
+function Detalle(Pro,cod)
 {
     $.ajax({
         url: 'Ajax/AjaxDetallePagosProveedores.php',
         type: 'post',
-        data: {id: cod},
+        data: {id: cod, Pro:Pro},
         success: function (Resultados)
         {
             $('#Resultados').html(Resultados);

@@ -210,7 +210,7 @@ class ModelServicios
         return $S->tipo;
     }
 
-    public function VerDetalleReservaCotizacion($id_reserva)
+    public function VerDetalleReservaCotizacion($id_reserva,$Proveedor)
     {
         $con = App::$base;
         $sql = 'SELECT 
@@ -226,29 +226,29 @@ class ModelServicios
             INNER JOIN `cotizacion_servicio` ON (`cotizacion_servicio`.`id_cotizacion` = `cotizacion`.`id_cotizacion`)
             INNER JOIN `servicios` ON (`cotizacion_servicio`.`id_servicio` = `servicios`.`id_servicios`)
             where
-            `reserva`.`Id_reserva` =?';
-        $Res = $con->TablaDatos($sql, array ($id_reserva));
+            `reserva`.`Id_reserva` =? AND `servicios`.`fk_Proveedor`=?';
+        $Res = $con->TablaDatos($sql, array ($id_reserva,$Proveedor));
         return $Res;
     }
 
-    public function VerDetalleReservaPaquete($id_reserva)
+    public function VerDetalleReservaPaquete($id_reserva,$Proveedor)
     {
         $con = App::$base;
         $sql = 'SELECT 
-            `paquete`.`Nombre` as paquete,
+            `paquete_reservado`.`Nombre` as paquete,
             `servicios`.`Nombre`,
-            `reserva`.`Fecha_reserva`,
-            `servicios_paquete`.`cantidad_servicios`,
-            `servicios_paquete`.`valor_unitario_servicio`,
-            (`servicios_paquete`.`cantidad_servicios` * `servicios_paquete`.`valor_unitario_servicio`) AS `total`
-          FROM
-            `servicios`
-            INNER JOIN `servicios_paquete` ON (`servicios`.`id_servicios` = `servicios_paquete`.`fk_servicio`)
-            INNER JOIN `paquete` ON (`servicios_paquete`.`fk_paquete` = `paquete`.`id_paquete`)
-            INNER JOIN `reserva` ON (`paquete`.`id_paquete` = `reserva`.`Fk_paquete`)
-          WHERE
-            `reserva`.`Id_reserva` = ?';
-        $Res = $con->TablaDatos($sql, array ($id_reserva));
+              `reserva`.`Fecha_reserva`,
+              `paquete_reservado_servicios`.`cantidad_servicios`,
+              `paquete_reservado_servicios`.`valor_unitario_servicio`,
+              (`paquete_reservado_servicios`.`cantidad_servicios`*`paquete_reservado_servicios`.`valor_unitario_servicio`) as total
+            FROM
+              `paquete_reservado_servicios`
+              INNER JOIN `paquete_reservado` ON (`paquete_reservado_servicios`.`fk_paquete` = `paquete_reservado`.`id_paquete_reservado`)
+              INNER JOIN `servicios` ON (`paquete_reservado_servicios`.`fk_servicio` = `servicios`.`id_servicios`)
+              INNER JOIN `reserva` ON (`reserva`.`Fk_paquete` = `paquete_reservado`.`id_paquete_reservado`)
+              WHERE
+            `reserva`.`Id_reserva` = ? AND `servicios`.`fk_Proveedor`=?';
+        $Res = $con->TablaDatos($sql, array ($id_reserva,$Proveedor));
         return $Res;
     }
 
@@ -272,26 +272,23 @@ class ModelServicios
         $Filtro = array ('Confirmado', $FechaInicio, $FechaFin);
         $con    = App::$base;
         $sql    = 'SELECT 
-  `reserva`.`Id_reserva`,
-  `reserva`.`Id_reserva` AS `imp`,
-  CONCAT(IFNULL(`proveedor`.`Nombre`, ""), IFNULL(`proveedor1`.`Nombre`, "")) AS `nombre`,
-  `reserva`.`Fecha_pedido`,
-  `reserva`.`valor`,
-  CASE `reserva`.`tipo`
-          WHEN "C" THEN "Cotizacion"
-          WHEN "P" THEN "Paquete"
-          END as "Tipo"
-FROM
-  `reserva`
-  LEFT OUTER JOIN `cotizacion` ON (`reserva`.`fk_cab_cotizacion` = `cotizacion`.`id_cotizacion`)
-  LEFT OUTER JOIN `cotizacion_servicio` ON (`cotizacion_servicio`.`id_cotizacion` = `cotizacion`.`id_cotizacion`)
-  LEFT OUTER JOIN `servicios` ON (`cotizacion_servicio`.`id_servicio` = `servicios`.`id_servicios`)
-  LEFT OUTER JOIN `proveedor` ON (`servicios`.`fk_Proveedor` = `proveedor`.`id_proveedor`)
-  INNER JOIN `paquete_reservado` ON (`reserva`.`Fk_paquete` = `paquete_reservado`.`id_paquete_reservado`)
-  INNER JOIN `paquete_reservado_servicios` ON (`paquete_reservado`.`id_paquete_reservado` = `paquete_reservado_servicios`.`fk_paquete`)
-  INNER JOIN `servicios` `servicios1` ON (`paquete_reservado_servicios`.`fk_servicio` = `servicios1`.`id_servicios`)
-  LEFT OUTER JOIN `proveedor` `proveedor1` ON (`servicios1`.`fk_Proveedor` = `proveedor1`.`id_proveedor`) 
-                WHERE
+            `reserva`.`Id_reserva` AS `imp`, 
+            CONCAT(COALESCE(`proveedor`.`id_proveedor`,`proveedor1`.`id_proveedor`),\',\', 
+            `reserva`.`Id_reserva`) as id_reserva,
+            CONCAT(IFNULL(`proveedor`.`Nombre`, ""), IFNULL(`proveedor1`.`Nombre`, "")) AS `nombre`, 
+            `reserva`.`Fecha_pedido`, 
+            `reserva`.`valor`, 
+            CASE `reserva`.`tipo` WHEN "C" THEN "Cotizacion" WHEN "P" THEN "Paquete" END as "Tipo"
+             FROM 
+             `reserva` 
+             LEFT OUTER JOIN `cotizacion` ON (`reserva`.`fk_cab_cotizacion` = `cotizacion`.`id_cotizacion`) 
+             LEFT OUTER JOIN `cotizacion_servicio` ON (`cotizacion_servicio`.`id_cotizacion` = `cotizacion`.`id_cotizacion`) 
+             LEFT OUTER JOIN `servicios` ON (`cotizacion_servicio`.`id_servicio` = `servicios`.`id_servicios`) 
+             LEFT OUTER JOIN `proveedor` ON (`servicios`.`fk_Proveedor` = `proveedor`.`id_proveedor`) 
+             INNER JOIN `paquete_reservado` ON (`reserva`.`Fk_paquete` = `paquete_reservado`.`id_paquete_reservado`) 
+             INNER JOIN `paquete_reservado_servicios` ON (`paquete_reservado`.`id_paquete_reservado` = `paquete_reservado_servicios`.`fk_paquete`) 
+             INNER JOIN `servicios` `servicios1` ON (`paquete_reservado_servicios`.`fk_servicio` = `servicios1`.`id_servicios`) 
+             LEFT OUTER JOIN `proveedor` `proveedor1` ON (`servicios1`.`fk_Proveedor` = `proveedor1`.`id_proveedor`)WHERE
           `reserva`.`Estado` = ? and
             date(`reserva`.`Fecha_pedido`) BETWEEN date(?) and date(?)
             ';
