@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--  css-->
+        <link rel="stylesheet" href="../css/bootstrap.css"/>
+        <link rel="stylesheet" href="../css/jquery-ui.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.js"></script>
+        <script type="text/javascript" src="../js/numeric.js"></script>
+        <script type="text/javascript" src="../js/armar_paquetes.js"></script>
+        <!-- !js-->
+
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    ARMAR PAQUETES
+                </div>
+                <div class="panel-body">
+                    <div id="Armar-Paquetes">
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Paquete" >Seleccione el paquete</label></div>
+                            <div class="col-lg-7"><div id="Paquetes">Paquetes</div></div>
+                            <div class="col-lg-2"> <button type="button" class="btn btn-link" onclick="window.location.href = './NuevoPaquete.html'">Nuevo paquete</button> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Proveedor" >Seleccione el proveedor</label></div>
+                            <div class="col-lg-9">
+                                <div id="Proveedores">Proveedores</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Servicios" >Seleccione el servicio</label></div>
+                            <div class="col-lg-9">
+                                <div id="Servicios"><select class="form-control"></select></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Precio" >Indique el precio dentro del paquete</label></div>
+                            <div class="col-lg-9">
+                                <div class="input-group">
+                                    <div class="input-group-addon">$</div>
+                                    <input type="number" class="form-control" id="ganancia" placeholder="Valor del servicio dentro del paquete">
+                                </div>    
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Cantidad" >Seleccione la cantidad de servicios</label></div>
+                            <div class="col-lg-9"><input id="Cantidad" class="form-control" placeholder="Cantidad" type="number"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"><label for="Ganancia" >Porcentaje de ganancia</label></div>
+                            <div class="col-lg-9">
+                                <div class="input-group">
+                                    <div class="input-group-addon">%</div>
+                                    <input type="number" class="form-control" id="Porcentaje" placeholder="Porcentaje de venta">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <center>
+                                    <button type="button"  onclick="CargarLista()" class="btn btn-success">Guardar</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Log"></div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="Resultado">
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div id="Texto_lista">Servicios del paquete
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="Lista">
+                        Listado de servicios
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

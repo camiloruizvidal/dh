@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+        <script type="text/javascript" src="js/Reservas.js"></script>
+        <!-- !js-->
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <form id="DatosCliente"  >
+                <div class="col-lg-12">   
+                    <div class="container-fluid" id="Cliente">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Ingrese los datos del cliente
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <label>
+                                                Nombres
+                                            </label>
+                                        </div>
+
+                                        <div class="col-lg-9">
+                                            <input type="text" id="Nombres" name="Nombres" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div id="datos_cliente">
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Tipo de documento
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <select type="text" id="Tipoid" name="Tipoid" class="form-control">
+                                                    <option value="Tarjeta de indentidad">Tarjeta de indentidad</option>
+                                                    <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+                                                    <option value="Cedula de extranjeria">Cedula de extranjeria</option>
+                                                    <option value="Pasaporte">Pasaporte</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Numero de documento
+                                                </label>
+                                            </div>
+
+                                            <div class="col-lg-9">
+                                                <input type="text" id="Documento" name="Documento" class="form-control"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Email
+                                                </label>
+                                            </div>
+
+                                            <div class="col-lg-9">
+                                                <input type="text" id="Email" name="Email" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Telefono
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="text" id="Telefono" name="Telefono" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Fecha de reserva
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <input type="text" id="Fecha" name="Fecha" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <label>
+                                                    Estado de pago
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <select type="text" id="pago" name="pago" class="form-control">
+                                                    <option value="S">Sí</option>
+                                                    <option value="N">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="col-lg-12">
+                    <div class="container-fluid">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Seleccione el paquete
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <label>Paquete</label>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div id="Proveedor">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div id="Servicios">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="Log">
+
+        </div>
+    </body>
+</html>

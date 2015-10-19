@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <!-- !js-->
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Formulario de registro
+                </div>
+                <div class="panel-body">
+                    <form role="search" action="registrado.html" method="post">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Nombre</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name ="Nombre" placeholder="Nombre">
+                                </div>                            
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Direccion</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name ="Direccion" placeholder="Por favor ingrese la Direccion">
+                                </div>                            
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Telefono</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="tel" class="form-control" name ="Telefono" placeholder="Por favor ingrese el teléfono">
+                                </div>                            
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="email" class="form-control" name ="Email" placeholder="Por favor ingrese el email">
+                                </div>                            
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Nit</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name ="Nit" placeholder="Por favor ingrese el Nit">
+                                </div>                            
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label>Descripcion</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" rows="5" name ="Descripcion" placeholder="Por favor ingrese una breve descripcion del proveedor"></textarea>
+                                </div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-primary">Guardar proveedor</button></div>                            
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

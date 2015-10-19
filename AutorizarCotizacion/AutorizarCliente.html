@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/Function.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <script type="text/javascript" src="js/Cotizacion.js"></script>
+        <!-- !js-->
+        <style >
+            .modal-dialog {
+                width: 100%;
+            }
+            .modal-content {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Cotizaciones
+                </div>
+                <div class="panel-body">
+                    <div id="cotizaciones">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div id="Title"></div>
+                    </div>
+                    <div class="modal-body">
+                        <form id="Actualizando">
+                            <div id="Contenido">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="GuardarCambios()">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

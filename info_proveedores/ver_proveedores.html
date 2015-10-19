@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <script type="text/javascript" src="js/VerProveedores.js"></script>
+        <!-- !js-->
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container" id="notificacion"></div>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Ver proveedores
+                </div>
+                <div class="panel-body">
+                    
+                    <!-- #EDITAR comienzo-->
+                    <div class="form-group" id="editar">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Nombre</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id ="Nombre" placeholder="Nombre">
+                            </div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Direccion</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id ="Direccion" placeholder="Por fabor ingrese la Direccion">
+                            </div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Telefono</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="tel" class="form-control" id ="Telefono" placeholder="Por favor ingrese el teléfono">
+                            </div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="email" class="form-control" id ="Email" placeholder="Por favor ingrese el email">
+                            </div>                            
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Nit</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id ="Nit" placeholder="Por favor ingrese el Nit">
+                            </div>                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>Descripcion</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" rows="5" id ="Descripcion" placeholder="Por favor ingrese una breve descripcion del proveedor"></textarea>
+                            </div>                            
+                        </div>
+                        <input type="hidden" id="id" value=""/>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button"  onclick="GuardarCambios()" class="btn btn-success">Editar proveedor</button>
+                            </div>                            
+                            <div class="col-lg-6">
+                                <button type="button" onclick="Restaurar()" class="btn btn-danger">Cancelar</button>
+                            </div>                            
+                        </div>
+                    </div>
+                    <!-- #Editar fin -->
+                    
+                    <div id="Listado_proveedores">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

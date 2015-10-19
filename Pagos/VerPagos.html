@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <script type="text/javascript" src="js/pagos.js"></script>
+        <!-- !js-->
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Pagos
+                </div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <form id="Fechas">
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <label>Fecha de inicio</label>    
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <input type="text" name="FechaInicio" id="FechaInicio"class="form-control"/>
+                                </div>
+
+                                <div class="col-lg-1">
+                                    <label>Fecha de Fin</label>    
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <input type="text" name="FechaFin" id="FechaFin" class="form-control"/>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div id="selectProveedor"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <center>
+                                    <button type="button" class="btn btn-success" onclick="Buscar()">Buscar pagos</button>
+                                </center>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div id="Resultados">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

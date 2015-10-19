@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.css"/>
+        <link rel="stylesheet" href="css/admin.css"/>
+
+        <!-- !css-->
+
+        <!--  js-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/MenuAdmin.js"></script>
+        <script type="text/javascript" src="js/NuevoPaqute.js"></script>
+        <!-- !js-->
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div id="MenuAdmin">
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    ARMAR PAQUETES
+                </div>
+                <div class="panel-body">
+                    <form method="post" id="Formulario" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="Nombre">Nombre del paquete</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="Nombre" name="Nombre"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="Nombre">Fecha de inicio</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input class="form-control" id="FechaIncio" name="FechaIncio" type="text"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="Nombre">Fecha de fin</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <input class="form-control" id="FechaFin" name="FechaFin" type="text"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="Nombre">Descripcion</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="Descripcion" name="Descripcion" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="Nombre">Municipios</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div id="Municipios">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="bg-primary" onclick="Guardar()">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" width="1200px" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document" width="1200px" style="width: 1240px;">
+                            <div class="modal-content" width="1200px"> 
+                                <div class="modal-header" width="1200px">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Servicios del paquete</h4>
+                                </div>
+                                <div class="modal-body" >
+                                    <iframe src=""  id="ifrm" width="1200px"></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Salir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    PAQUETES
+                </div>
+                <div class="panel-body">
+                    <div id="ListadoPaquetes">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta description="Sistema Integrado de Información Turistica.">
+        <title>Login Sistema Integrado de Información Turistica</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximun-scale=1">
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <link href="./css/login.css" rel="stylesheet" type="text/css">
+        <link href="./css/login1.css" rel="stylesheet" type="text/css">
+        <link href="./css/login1.css" rel="stylesheet" type="text/css">
+        <link href="./css/reset.css" rel="stylesheet" type="text/css">
+
+
+        <script type="text/javascript" src="./js/jquery-latest.min.js"></script>
+        <script src="./js/responsiveslides.min.js"></script>
+        <script src="./js/Validate.js"></script>
+        <script>$(function () {
+                // Slideshow 1
+                $("#slider1").responsiveSlides({
+                    maxwidth: 2880,
+                    speed: 4000,
+                    timeout: 5000,
+                    random: true
+                });
+            });</script>	
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="slideshow-wrap" class="wrapper">
+
+                <ul class="rslides rslides1" id="slider1" style="max-width: 2880px;">
+                    <li id="rslides1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; -webkit-transition: opacity 4000ms ease-in-out; transition: opacity 4000ms ease-in-out;">
+                        <img src="./images/banner-2.jpg">
+                    </li>
+                    <li id="rslides1_s1" style="float: left; position: relative; opacity: 1; z-index: 2; display: list-item; -webkit-transition: opacity 4000ms ease-in-out; transition: opacity 4000ms ease-in-out;" class="rslides1_on">
+                        <img src="./images/banner-4.jpg"></li>
+                    <li id="rslides1_s2" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; -webkit-transition: opacity 4000ms ease-in-out; transition: opacity 4000ms ease-in-out;" class="">
+                        <img src="./images/banner-1.jpg"></li>
+                    <li id="rslides1_s3" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; -webkit-transition: opacity 4000ms ease-in-out; transition: opacity 4000ms ease-in-out;" class="">
+                        <img src="./images/banner-3.jpg"></li>
+                </ul>
+            </div>
+            <!--End Slider -->
+
+            <div id="login-wrap">
+                <div id="login">
+                    <header>
+                        <figure><a href="./index.html"><img src="./images/logo-front.png" title="./"></a></figure>
+                    </header>
+                    <form id="login_form" method="post" action="ver_proveedores.html">				
+                        <label id="username">Usuario</label>			
+                        <input id="usuario" type="text" tabindex="1" name="var_user" placeholder="Usuario">
+                        <label>Contraseña</label>			
+                        <input id="clave" type="password" tabindex="2" name="var_pass" placeholder="Contraseña">
+                        <input id="submit" name="ingresar" type="submit" value="Ingresar" style="width: 100px; height: 35px; background-color: #721F00; border: 1px; margin-bottom: 28px; color: #FFF">
+                    </form>
+                    <div id="Error"></div>
+                    <div id="registro">
+                        <ul>
+                            <li><a id="restorepassword" href="#">¿No puedes acceder a tu cuenta?</a></li>
+                        </ul>				
+                    </div>
+                </div>					
+            </div>
+            <!-- end login -->	
+        </div>
+
+    </body></html>

@@ -1,0 +1,24 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+DirectoryIndex index/siit.html
+Rewriterule ^index.html$ index/siit.html
+Rewriterule ^Cotice.html$ index/Cotice.html
+Rewriterule ^com_paquete.html$ ComprarPaquetes/paquete.php
+Rewriterule ^login.html$ login/login.html
+Rewriterule ^paquetes.html$ paquetes/paquetes.html
+Rewriterule ^registros.html$ registrarproveedores/Registro_Proveedor.html
+Rewriterule ^registrado.html$ registrarproveedores/RegistrarPaquetes.php
+Rewriterule ^admin.html$ plantillas/admin.html
+Rewriterule ^cliente.html$ plantillas/cliente.html
+Rewriterule ^ver_proveedores.html$ info_proveedores/ver_proveedores.html
+Rewriterule ^ver_paquetes.html$ ver_paquetes/Ver_paquetes.html
+Rewriterule ^Ver_paquetesProveedor.html$ ver_paquetes/Listado.html
+Rewriterule ^NuevoPaquete.html$ armar_paquetes/NuevoPaquete.html
+Rewriterule ^AutorizarCliente.html$ AutorizarCotizacion/AutorizarCliente.html
+Rewriterule ^AutorizarServicios.html$ AutorizarServicios/AutorizarServicios.html
+Rewriterule ^AprobarCotizacion.html$ Cliente/AprobarCotizacion.html
+Rewriterule ^GenerarReserva.html$ Cliente/GenerarReserva.html
+Rewriterule ^Reservas.html$ Cliente/Reservas.html
+Rewriterule ^VerPagos.html$ Pagos/VerPagos.html
+Rewriterule ^Comprar$ CompraCliente/Registrocliente.php
