@@ -3,7 +3,7 @@ include_once '../Controller/Cliente.php';
 $Cliente = new Cliente();
 $Documento=$_POST['Numero_cedula'];
 $valida=false;
-$Datos = $Cliente->validarusuario($Documento);
+$Datos = $Cliente->validarusuario2($Documento);
 if(!is_null($Datos))
 {
     $valida=true;

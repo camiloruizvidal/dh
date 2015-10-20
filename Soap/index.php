@@ -169,8 +169,8 @@ function CambiarDisponibilidadServicio($Cod_proveedor, $id_servicio)
         return json_encode(array ('Error' => 'Usuario deshabilitado'));
     }
 }
-/*
 
+/*
   $server = new soap_server();
   $server->register('GuardarServicios');
   $server->register('SiValida');
@@ -186,13 +186,8 @@ function CambiarDisponibilidadServicio($Cod_proveedor, $id_servicio)
   $server->register('TotalReservaCotizacion');
   $server->register('TotalValorServicios');
   @$server->service($HTTP_RAW_POST_DATA);
-  ?>
- * 
+  ?> 
  */
-
- 
-
-
 $soap                              = new soap_server;
 $soap->configureWSDL('Servicios de turismo', 'http://localhost/turismo/soap/index.php');
 $soap->wsdl->schemaTargetNamespace = 'http://soapinterop.org/xsd/';

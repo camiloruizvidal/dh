@@ -368,12 +368,12 @@ FROM
 FROM
   `reserva`
   LEFT OUTER JOIN `cotizacion` ON (`reserva`.`fk_cab_cotizacion` = `cotizacion`.`id_cotizacion`)
-  inner JOIN `paquete_reservado` ON (`reserva`.`Fk_paquete` = `paquete_reservado`.`id_paquete_reservado`)
+  LEFT OUTER JOIN `paquete_reservado` ON (`reserva`.`Fk_paquete` = `paquete_reservado`.`id_paquete_reservado`)
   LEFT OUTER JOIN `cotizacion_servicio` ON (`cotizacion`.`id_cotizacion` = `cotizacion_servicio`.`id_cotizacion`)
   LEFT OUTER JOIN `paquete_reservado_servicios` ON (`paquete_reservado`.`id_paquete_reservado` = `paquete_reservado_servicios`.`fk_paquete`)
   LEFT OUTER JOIN `servicios` ON (`paquete_reservado_servicios`.`fk_servicio` = `servicios`.`id_servicios`)
   LEFT OUTER JOIN `servicios` `servicios1` ON (`cotizacion_servicio`.`id_servicio` = `servicios1`.`id_servicios`)
-  inner JOIN `cliente` ON (`reserva`.`fk_cliente` = `cliente`.`id_cliente`)
+  LEFT OUTER JOIN `cliente` ON (`reserva`.`fk_cliente` = `cliente`.`id_cliente`)
   LEFT OUTER JOIN `proveedor` ON (`servicios`.`fk_Proveedor` = `proveedor`.`id_proveedor`)
   LEFT OUTER JOIN `proveedor` `proveedor1` ON (`servicios1`.`fk_Proveedor` = `proveedor1`.`id_proveedor`)
 WHERE
