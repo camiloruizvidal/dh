@@ -107,13 +107,22 @@ class Proveedor
         $Datos   = $Ver->ValorTotalVentaPaqueteCotizacion($Cod_proveedor, $FechaIncial, $FechaFinal);
         return $Datos;
     }
-
+    private function Calcular($Valor)
+    {
+        $Res=0;
+        foreach($Valor as $temp)
+        {
+            $Res=$Res+$temp['valor'];
+        }
+        return $Res;
+    }
     public function EstadoCuentaTotal($Cod_proveedor, $FechaIncial, $FechaFinal)
     {
         $Ver   = new ModelProveedor();
         $Total = $Ver->ValorTotalEstadoCuenta($Cod_proveedor, $FechaIncial, $FechaFinal); //Generar revision
         $Datos = $Ver->EstadoCuentaTotal($Cod_proveedor, $FechaIncial, $FechaFinal);
-        $Res   = array ('Datos' => $Datos, 'Total' => $Total['valor']);
+        $Total=  $this->Calcular($Total);
+        $Res   = array ('Datos' => $Datos, 'Total' => $Total);
         return $Res;
     }
 
